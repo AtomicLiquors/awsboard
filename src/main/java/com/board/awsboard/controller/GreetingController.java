@@ -15,4 +15,15 @@ public class GreetingController {
         return "greeting";
     }
 
+    @GetMapping("/main")
+    public String main(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "main";
+    }
+
+    @GetMapping("/sider")
+    public String sider(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "sider";
+    }
 }
