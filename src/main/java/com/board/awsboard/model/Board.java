@@ -18,7 +18,7 @@ public class Board {
     private long id;
 
     @NotNull
-    @Size(min=2, max=30)
+    @Size(min=2, max=30, message = "제목은 2~30자로 입력해주세요.")
     private String title;
     private String content;
 }

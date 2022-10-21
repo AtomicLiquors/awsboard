@@ -2,6 +2,7 @@ package com.board.awsboard.controller;
 
 import com.board.awsboard.model.Board;
 import com.board.awsboard.repository.BoardRepository;
+import com.board.awsboard.validator.BoardValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class BoardController {
 
     @Autowired
     private BoardRepository boardRepository;
+
+    @Autowired
+    private BoardValidator boardValidator;
 
     @GetMapping("/list")
     public String list(Model model){
@@ -39,6 +43,7 @@ public class BoardController {
 
     @PostMapping("/form")
     public String createArticle(@Valid Board board, BindingResult bindingResult) {
+        boardValidator.validate(board, bindingResult);
         if(bindingResult.hasErrors()){
             return "board/form";
         }

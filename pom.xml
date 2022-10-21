@@ -60,13 +60,10 @@
 			<version>8.0.30</version>
 		</dependency>
 
-		<!-- validation-api -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-
-		<!-- 로컬 이상 없음 -->
 
 
 	</dependencies>
