@@ -29,7 +29,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .antMatchers("/", "/css/**").permitAll()
+                        .antMatchers("/", "/css/**", "/sample/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
